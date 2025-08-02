@@ -1,16 +1,9 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React, { FC } from 'react';
 
-interface Props {
-  author: string;
-  nameOfBook: string;
-  price: number;
-  coverURL: string;
-  categoryColor: string;
-  onDeletePress: () => void;
-}
 
-const Book: FC<Props> = ({
+
+const Book = ({
   author,
   nameOfBook,
   price,
@@ -24,12 +17,12 @@ const Book: FC<Props> = ({
         <Image source={{ uri: coverURL }} style={styles.image} />
       </View>
 
-      <Text>{author}</Text>
+      <Text > {author}</Text>
       <Text>{nameOfBook}</Text>
       <Text>{price}$</Text>
-      <Text style={styles.deletetext} onPress={onDeletePress}>
+      {/* <Text style={styles.deletetext} onPress={onDeletePress}>
         Delete
-      </Text>
+      </Text> */}
     </View>
   );
 };
@@ -39,11 +32,12 @@ export default Book;
 const styles = StyleSheet.create({
   container: { alignItems: 'center', marginBottom: 50 },
   coloredSquare: {
-    borderRadius: 8,
+    borderRadius: 14,
     height: 130,
     width: 130,
     alignItems: 'center',
     marginBottom: 5,
+
   },
   image: {
     height: 130,
